@@ -158,7 +158,7 @@ input[type="text"] {
   border-radius: 5px;
   border-style: inset;
   background: rgb(247, 245, 242);
-  color: rgb(228, 192, 228);
+  color: #303a6d;
 }
 
 .convert {
@@ -191,7 +191,7 @@ h2.inset {
     padding: 4px;
     background: rgb(247, 245, 242);
     color: #303a6d;
-    margin 
+    margin-left: 30px;
 }
 
 </style>
