@@ -29,10 +29,6 @@ export default {
             result: '',
             selected: ['Celsius', 'Fahrenheit'],
             myChoice: 'Celsius',
-            options: {
-                Celsius: false,
-                Fahrenheit: true,
-            },
             disable: false
         };
     },
@@ -127,7 +123,7 @@ label {
 }
 
 .left {
-    margin-left: 15px;
+    margin-left: 7px;
 }
 .temperature select {
     padding: 11px 5px;
@@ -183,7 +179,7 @@ input[type="text"] {
 
 #Temperature {
     width: 80px;
-    border: black;
+    border: #959fd4;
     border-style: solid;
 }
 
@@ -195,6 +191,7 @@ h2.inset {
     padding: 4px;
     background: rgb(247, 245, 242);
     color: #303a6d;
+    margin 
 }
 
 </style>
