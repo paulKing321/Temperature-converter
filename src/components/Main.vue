@@ -5,7 +5,7 @@
                 <label for="degrees">Degrees</label>
                 <input type="text" v-model="temperature">
                     <label class="left" for="type">From</label>
-                    <select name="Temperatures" id="Temperature" @change="changeTemp">
+                    <select name="Temperatures" id="Temperature" @change="changeTemp" v-model="myChoice">
                             <option v-for='type in selected' :key='type'>{{ type }}</option>
                     </select>
                     <button @click.prevent="cToF" class="convert" value="submit" type="submit">Convert</button>
@@ -28,6 +28,7 @@ export default {
             temperature: '',
             result: '',
             selected: ['Celsius', 'Fahrenheit'],
+            myChoice: 'Celsius',
             options: {
                 Celsius: false,
                 Fahrenheit: true,
@@ -37,35 +38,30 @@ export default {
     },
     methods: {
         changeTemp() {
-                if (this.selected == 'Fahrenheit') {
-                    this.options.Celsius = false
-                    this.options.Fahrenheit = true
+                if (this.myChoice == 'Fahrenheit') {
+                   console.log('fahrenheit')
                 }
-                else if (this.selected === 'Celsius') {
-                    this.options.Fahrenheit = false
-                    this.options.Celsius = true
+                else if (this.myChoice === 'Celsius') {
+                    console.log('Celsius')
                 }
             },
 
         cToF() {
 
-            const option = this.options.Celsius
-            const optionTwo = this.options.Fahrenheit
-
 
             if(isNaN(this.temperature)) {
                 return alert('What happened to inputing a value for degrees!!');
             }
-            else if(option) {
+            else if(this.myChoice == 'Fahrenheit') {
                 this.Celsius = this.temperature;
-                this.result = Math.round(this.temperature * 9/5 +32) +'\xB0F';
+                this.result = Math.round((this.temperature -32) * 5/9) +'\xB0C';
                 this.result;
                 console.log(this.result);
             }
-            else if(optionTwo){
+            else if(this.myChoice === 'Celsius'){
                 
                 this.Fahrenheit = this.temperature;
-                this.result = Math.round((this.temperature -32) * 5/9) +'\xB0C';
+                this.result = Math.round(this.temperature * 9/5 +32) +'\xB0F';
                 this.result;
                 console.log(this.result);
             }
@@ -182,11 +178,11 @@ input[type="text"] {
     cursor: pointer;
     width: 67px;
     height: 2.7rem;
-    margin: 15px;
+    margin: 10px;
 }
 
 #Temperature {
-    width: 100px;
+    width: 80px;
     border: black;
     border-style: solid;
 }
