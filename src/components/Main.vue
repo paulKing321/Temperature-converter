@@ -159,6 +159,8 @@ input[type="text"] {
   border-style: inset;
   background: rgb(247, 245, 242);
   color: #303a6d;
+  font-weight: 530;
+  /* font-size: 12px; */
 }
 
 .convert {
